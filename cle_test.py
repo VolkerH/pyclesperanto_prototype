@@ -2,13 +2,13 @@ import numpy as np
 import clesperanto as cle
 
 # push an array to the GPU
-flip = cle.push(np.array([2, 4, 6, 8, 10, 12, 14, 16, 18, 20]))
+flip = cle.push(np.array([[2, 4, 6, 8, 10, 12, 14, 16, 18, 20]]))
 
 # print input
 print(flip)
-
+print(type(flip))
 # create memory for the output
-flop = cle.create((10,))
+flop = cle.create((10,1))
 
 # add a constant to all pixels
 cle.add_image_and_scalar(flip, flop, 100.0)
